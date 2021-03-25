@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="layout" class="pure-g">
+        <div class="header pure-u-1 pure-u-md-1-4">
+            <header>
+                <h2>
+                <a href="/">Tech Blog</a>
+                </h2>
+                <nav class="pure-menu pure-menu-horizontal">
+                    {{#if loggedIn}}
+                    <a class="pure-button" href="/dashboard">Dashboard</a>
+                    <button class="pure-button" id="logout">Logout</button>
+                    {{else}}
+                    <a class="pure-button" href="/login">Log In</a>
+                    <a class="pure-button" href="/signup">Sign up</a>
+                    {{/if}}
+                </nav>
+            </header>
+        </div>
+        <div class="posts pure-u-1 pure-u-md-3-4">
+            <main>
+                {{{ body }}}
+            </main>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">Thanks for visiting!</div>
+    </footer>
+
+
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
