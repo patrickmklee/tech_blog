@@ -1,12 +1,88 @@
+html {
+  font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+}
 
 #layout {
   padding: 0;
+  margin: 0;  
+}
+p {
+  font-size: 1.8rem;
+}
+.post-display-title {
+  font-size: 3.6em;
+}
+header {
+  margin-top: 0;
+  font-size: 3.2rem;
+
+  background-color: darkslategray;
+}
+.pure-g > div {
+  box-sizing: border-box;
+}
+.navbar {
+  margin: 0;
+  padding: 2rem;
+}
+.navbar-title {
+  color: #ffffff;
+  font-size: 1.25em;
+}
+.navbar-header {
+  /* display: inline; */
+  padding-bottom: 1.2rem;
+  /* margin-left: 1.2em; */
+}
+.image-wrapper{
+  /* margin-top: 3.6rem; */
+  /* padding: 1.6rem; */
+  vertical-align: top;
+  text-align: center;
+  
+}
+.header-image {
+  background: url(../assets/img/laptop-wide.png) center center no-repeat;
+  /* top: -2em; */
+  
+  min-height: 400px;
+  border: rgb(31, 53, 53) solid 0.25px;
+  /* background: center; */
+  vertical-align: bottom;
+  background-size: cover;
+  padding-top: 3rem;
+  z-index: 1;
+
 }
 
-header {
+.navbar-header > a{
+  text-decoration: none;
+
+}
+.navbar-links {
+  list-style-type: none;
+  display: inline;
+
+}
+.navbar-links > li {
+  font-size: 65%;
+  display: inline;
+}
+
+a.pure-button {
+  color: #222;
+  transition-property: background-color, color;
+  transition-duration: 0.4s;
+  
+}
+.user-interface {
   text-align: center;
-  top: auto;
-  margin: 3em auto;
+  
+}
+.pure-button:hover{
+  color: white;
+  background-color: cadetblue;
+  
 }
 
 .content-subhead {
@@ -18,18 +94,39 @@ header {
   font-weight: 500;
   letter-spacing: 0.1em;
 }
-
-.content {
-  padding: 2em 1em 0;
+form {
+  font-size: 3.6rem;
 }
-
+.content {
+  /* display: inline-flex; */
+  display: block;
+  /* flex-direction: column; */
+  margin: 0 3.2rem;
+  font-size: 1.6rem;
+  /* padding: 2em 1em 0; */
+}
+.post-container {
+  margin-top: 1em;
+  border-radius: 1%;
+  border-color: black;
+  border-style: groove;
+  /* margin-bottom: 2em; */
+}
 .post {
-  padding-bottom: 2em;
+  font-size: 2em;
+  margin: 1.2em 1em;
+}
+.post-header {
+  border-top: 1em;
+  border-bottom: 1em;
 }
 .post-title {
-  font-size: 2em;
-  color: #222;
-  margin-bottom: 0.2em;
+  text-transform: uppercase;
+  font-size: 120%;
+  /* line-height: 1.3em; */
+  text-decoration: none;
+  color: rgb(44, 44, 44);
+
 }
 .post-avatar {
   border-radius: 50px;
@@ -39,10 +136,18 @@ header {
 .post-description {
   font-family: Georgia, "Cambria", serif;
   color: #444;
-  line-height: 1.8em;
+  /* line-height: 1.8em; */
+
+  /* padding-top: 0.2em; */
+  /* padding: 1rem 0.2em; */
+  font-size: 85%;
+
 }
 .post-meta {
   color: #999;
-  font-size: 90%;
+  font-size: 78%;
+  line-height: 3em;
+
+  text-align: left;
   margin: 0;
 }

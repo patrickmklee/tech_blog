@@ -1,0 +1,23 @@
+{{#if loggedIn}}
+<form class="edit-post-form">
+  {{!-- <input> --}}
+  <div>
+      <label for="post-title">Title</label>
+      <textarea id="post-title" name="post-title">{{post.title}}</textarea>
+      {{!-- <input type="text" id="post-title" name="post-title" /> --}}
+    </div>
+    <div>
+      <label for="post-text">Text</label>
+      <textarea id="post-text" name="post-text">{{post.text}}</textarea>
+    </div>
+    <button type="submit" class="btn">Update</button>
+</form>
+<a class="btn pure-button" href="/dashboard">Cancel</a>
+
+{{!-- {{/if}} --}}
+
+{{!-- {{> comments post.comments}} --}}
+
+{{!-- {{#if loggedIn}} --}}
+<script src="/javascript/edit-post.js"></script>
+{{/if}}

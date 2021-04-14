@@ -43,6 +43,10 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
+router.get('/new', withAuth, (req, res) => {
+  res.render('dashboard', {cache:true, loggedIn:true, newPost:true})
+});
+
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
