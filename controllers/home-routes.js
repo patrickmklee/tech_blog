@@ -68,7 +68,7 @@ router.get('/post/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username','id']
+        attributes: ['id', 'username']
       }
     ]
   })
@@ -78,8 +78,13 @@ router.get('/post/:id', (req, res) => {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-
       const post = dbPostData.get({ plain: true });
+      // const isOwner = post.checkUser(req.session)
+      // if (isOwner) {}
+      // if (req.session.user_id===post.user_id) {
+      //   res.redirect('/dashboard/post')
+      //   return;
+      // }
       res.render('single-post', {
         isOwner: (req.session.user_id===post.user.id),
         post,
@@ -92,6 +97,16 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render("homepage", {
+    title: "Create your account"
+  }
+  );
+});
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');

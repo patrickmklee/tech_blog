@@ -8,14 +8,15 @@
   </div>
 </nav> --}}
 {{> page/nav}}
-<div class="container-fluid">
+<div class="row mb-2 post-container">
 {{> post-info post}}
-</div>
 {{#if isOwner}}
-<a href="/edit/{{post.id}}" class="pure-button">Edit post</a>
+<a href="/dashboard/edit/{{post.id}}" class="btn btn-outline-secondary">Edit post</a>
 {{/if}}
+</div>
+<div class="row">
 {{> comments post.comments}}
-
+</div>
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
@@ -26,7 +27,7 @@
   </div>
 </form>
 {{/if}}
-
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}
+</div>

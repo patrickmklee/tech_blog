@@ -1,15 +1,13 @@
-<form id="new-post-form" class="new-post-form">
-<legend>Create New Post</legend>
-<div class="form-group">
-    <label class='form-label-hidden' for="post-title">Title your post</label>
-    <input class="form-control form-control-lg" type="text" id="post-title" name="post-title" placeholder="Title">
+<form data-id={{id}} id="new-post-form" class="new-post-form">
+<legend>{{legend}}</legend>
+<div class="form-group form-group-control">
+    <label class='form-label' for="post-title">Title</label>
+    <input class="form-control form-control-lg" type="text" id="post-title" name="post-title" value="{{title}}">
 </div>
-<div class="form-group">
-    <label for="post-url">Set the URL</label>
-    <input class="form-control form-control-lg" type="text" id="post-url" name="post-url" placeholder="URL"/>
+<br>    
+<div class="form-group form-group-control">
+    <label class='form-label' for="post-text">Content</label>
+    <textarea class="form-control form-control-lg" id="post-text" name="post-text" rows="6">{{text}}</textarea>
 </div>
-<div class="form-group">
-    <textarea class="form-control" id="post-text" name="post-text" rows="3"></textarea>
-</div>
-<button class="btn btn-success button-lg" type="submit" >Create</button>
+<button class="btn btn-success button-lg" type="submit" >Submit Post</button>
 </form>

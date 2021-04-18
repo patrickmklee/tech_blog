@@ -2,7 +2,8 @@
 {{> page/nav}}
 
 {{#if isEditorPage}}
-{{> post-form}}
+
+{{> post-form post}}
 <script src="/javascript/add-post.js"></script>
 {{else}}
 <a class="btn btn-outline-success" href="/dashboard/new">New Post</a>

@@ -2,6 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // create our Post model
 class Post extends Model {
+  static checkUser (session) {
+    return (session.user_id === this.user_id);
+  }}
   // static comment(body, models) {
   //   return models.Comment.create({
   //     comment_text: body.comment_text,
@@ -33,7 +36,7 @@ class Post extends Model {
   //     });
   //   });
   // }
-}
+
 
 // create fields/columns for Post model
 Post.init(
