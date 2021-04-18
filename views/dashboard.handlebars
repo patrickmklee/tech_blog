@@ -1,18 +1,30 @@
+{{> page/navbar}}
 {{> page/header}}
-{{> page/nav}}
 
 {{#if isEditorPage}}
 
 {{> post-form post}}
 <script src="/javascript/add-post.js"></script>
 {{else}}
-<a class="btn btn-outline-success" href="/dashboard/new">New Post</a>
-<section class="container-fluid">
-  {{!-- {{#if posts.length}} --}}
+<div class="container mt-2">
+  <a class="btn btn-outline-success" href="/dashboard/new">New Post</a>
   <p class= "post-display-title">Your Posts</p>
+
+{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="/">
+  {{> page/title}}
+  </a>
+  </div>
+</nav> --}}
+{{!-- {{> page/nav}} --}}
+{{!-- <section class="homepage-main"> --}}
+  
   {{#each posts as |post|}}
-  {{> post-info post }}
+  <div class="row post-container mb-2">
+    {{> post-info post }}
+  </div>
   {{/each}}
   {{!-- {{/if}} --}}
-</section>
+</div>
 {{/if}}

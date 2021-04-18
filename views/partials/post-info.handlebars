@@ -1,6 +1,8 @@
 <article class="blog-post">
-    <h2><a class="blog-post-title" href="/post/{{id}}">{{title}}</a><h1>
+    <h4 class="blog-post-title"><a class="text-dark" href="/post/{{id}}">{{title}}</a></h4>
     <p class="blog-post-meta">{{user.username}} on {{format_date created_at}}</p>
-    <p>{{text}}</p>
-    <p class="blog-post-footer small"><a href="/post/{{id}}">{{comments.length}}{{format_plural "comment" comments.length}}</a></p>
+    <h5>{{text}}</h5>
+    <div class="blog-post-footer small">
+      <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    </div>
 </article>

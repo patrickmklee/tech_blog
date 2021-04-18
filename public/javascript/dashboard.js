@@ -1,3 +1,4 @@
+
 // async function viewPost() {
 //     const response = await fetch('/api/post/logout', {
 //       method: 'post',
@@ -13,4 +14,7 @@
   
 //   document.querySelector
 //   document.querySelector('#logout').addEventListener('click', logout);
-  
+
+function bindButtons(){
+    document.getElementById('Submit').addEventListener('click', sendRequest());
+}

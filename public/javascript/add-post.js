@@ -48,10 +48,18 @@ async function newFormHandler(event) {
   }
 }
 
-if (window.location.pathname === '/new'){
-  document.querySelector('#new-post-form').addEventListener('submit', newFormHandler);
-} else {
-  document.querySelector('#new-post-form').addEventListener('submit', editFormHandler);
-}
+// if (window.location.pathname === '/new'){
+//   document.querySelector('#new-post-form').addEventListener('submit', newFormHandler);
+// } else {
+//   document.querySelector('#new-post-form').addEventListener('submit', editFormHandler);
+// }
 
 
+window.addEventListener('DOMContentLoaded', (event) => {
+  console.log('DOM fully loaded and parsed');
+  if (window.location.pathname === '/new'){
+    document.querySelector('#new-post-form').addEventListener('submit', newFormHandler);
+  } else {
+    document.querySelector('#new-post-form').addEventListener('submit', editFormHandler);
+  }
+});
