@@ -1,15 +1,19 @@
-<section class="pure-u-1-2">
-<form id="login-form" class="pure-form pure-form-stacked">
-    <fieldset>
-        <legend>Login to Your Account</legend>
-        <label for="username-login">Username:</label>
-        <input type="text" id="username-login" placeholder="Username" />
-        <label for="password-login">Password</label>
-        <input type="password" id="password-login" placeholder="Password" />
-        <button type="submit" class="pure-button pure-button-primary"> Sign in</button>
-    </fieldset>
-  <a class="pure-button pure-button-warning" href="/signup">Sign Up Instead</a>
-
+<form id="login-form">
+  <legend>Login to Your Account</legend>
+  <div class="mb-2">
+    <label for="username-login" class="form-label">Username</label>
+    <input type="text" class="" id="username-login">
+    {{!-- <div id="usernameHelp" class="form-text">We'll never share your email with anyone else.</div> --}}
+  </div>
+  <div class="mb-2">
+  <label for="password-login">Password</label>
+  <input type="password" id="password-login" placeholder="Password" />
+  </div>
+  {{!-- <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div> --}}
+  <button type="submit" class="btn btn-primary">Submit</button><a class="btn btn-default" href="/signup">Sign Up Instead</a>
 </form>
-</section>
+
 <script src="/javascript/login.js"></script>

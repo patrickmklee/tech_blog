@@ -1,0 +1,13 @@
+{{!-- <div class="p-2 mb-4 text-white bg-light rounded-3"> --}}
+{{#unless isEditorPage}}
+<div class="d-grid gap-2 col-8 right">
+{{#if loggedIn}}
+<a href="/dashboard" class="btn btn-secondary" type="button" role="button">Dashboard</a>
+<a href="/" id="logout" class="btn btn-outline-secondary btn-logout" type="button" role="button">Logout</a>
+{{else}}
+<a href="/login"  class="btn btn-outline-primary" type="button" role="button">Log In</a>
+<a href="/signup" class="btn btn-outline-primary" type="button" role="button">Sign up</a>
+{{/if}}
+</div>
+{{/unless}}
+<a href="/" id="logout" class="btn btn-outline-secondary" hidden type="button" role="button">Logout</a>

@@ -1,22 +1,32 @@
+{{> page/header}}
 
+{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="/">
+  {{> page/title}}
+  </a>
+  </div>
+</nav> --}}
+{{> page/nav}}
+<div class="container-fluid">
 {{> post-info post}}
+</div>
+{{#if isOwner}}
+<a href="/edit/{{post.id}}" class="pure-button">Edit post</a>
+{{/if}}
+{{> comments post.comments}}
 
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
   </div>
-
   <div>
-    <button type="submit">add comment</button>
-    {{!-- <button type="button" class="upvote-btn">upvote</button> --}}
+    <button class="btn btn-default" type="submit">add comment</button>
   </div>
 </form>
 {{/if}}
 
-{{> comments post.comments}}
-
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-{{!-- <script src="/javascript/upvote.js"></script> --}}
 {{/if}}

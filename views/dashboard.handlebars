@@ -1,34 +1,17 @@
-<section class="pure-u-1 user-interface">
-{{#unless newPost}}
-<a class="pure-button" href="dashboard/new">New Post</a>
-{{/unless}}
-{{#if newPost}}
-{{!-- <section class="pure-u-1 user-interface"> --}}
-  <form class="new-post-form">
-    <h4>Create New Post</h4>
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-text">Text</label>
-      <input id="post-text" name="post-text" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-{{!-- {{#else}} --}}
-{{/if}}
-{{#if posts.length}}
-  <p class= "post-display-title">Your Posts</p>
+{{> page/header}}
+{{> page/nav}}
 
-  {{!-- <div class="pure-u-1-2 pure-u-sm-3-4"> --}}
-      {{!-- <h2>Your Posts</h2> --}}
-  {{#each posts as |post|}}
-  {{!-- <div class="pure-u-2-2"> --}}
-    {{> post-info post }}
-    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    {{/each}}
-  {{!-- </div> --}}
-  {{/if}}
-
+{{#if isEditorPage}}
+{{> post-form}}
 <script src="/javascript/add-post.js"></script>
+{{else}}
+<a class="btn btn-outline-success" href="/dashboard/new">New Post</a>
+<section class="container-fluid">
+  {{!-- {{#if posts.length}} --}}
+  <p class= "post-display-title">Your Posts</p>
+  {{#each posts as |post|}}
+  {{> post-info post }}
+  {{/each}}
+  {{!-- {{/if}} --}}
+</section>
+{{/if}}

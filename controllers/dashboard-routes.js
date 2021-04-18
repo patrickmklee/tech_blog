@@ -35,7 +35,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
+      res.render('dashboard', { posts,  loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -44,7 +44,7 @@ router.get('/', withAuth, (req, res) => {
 });
 
 router.get('/new', withAuth, (req, res) => {
-  res.render('dashboard', {cache:true, loggedIn:true, newPost:true})
+  res.render('dashboard', { loggedIn:true, isEditorPage:true})
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {

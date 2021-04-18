@@ -1,10 +1,10 @@
-html {
-  font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
-}
 
 #layout {
   padding: 0;
   margin: 0;  
+}
+h1 > a {
+  text-decoration: none;
 }
 p {
   font-size: 1.8rem;
@@ -12,28 +12,7 @@ p {
 .post-display-title {
   font-size: 3.6em;
 }
-header {
-  margin-top: 0;
-  font-size: 3.2rem;
 
-  background-color: darkslategray;
-}
-.pure-g > div {
-  box-sizing: border-box;
-}
-.navbar {
-  margin: 0;
-  padding: 2rem;
-}
-.navbar-title {
-  color: #ffffff;
-  font-size: 1.25em;
-}
-.navbar-header {
-  /* display: inline; */
-  padding-bottom: 1.2rem;
-  /* margin-left: 1.2em; */
-}
 .image-wrapper{
   /* margin-top: 3.6rem; */
   /* padding: 1.6rem; */
@@ -68,7 +47,9 @@ header {
   font-size: 65%;
   display: inline;
 }
-
+.btn.btn-logout:hover{
+  background-color: var(--bs-danger);
+}
 a.pure-button {
   color: #222;
   transition-property: background-color, color;
@@ -94,9 +75,7 @@ a.pure-button {
   font-weight: 500;
   letter-spacing: 0.1em;
 }
-form {
-  font-size: 3.6rem;
-}
+
 .content {
   /* display: inline-flex; */
   display: block;
@@ -112,42 +91,32 @@ form {
   border-style: groove;
   /* margin-bottom: 2em; */
 }
-.post {
-  font-size: 2em;
-  margin: 1.2em 1em;
+/*
+ * Blog posts
+ */
+.blog-post {
+  margin-bottom: 4rem;
 }
-.post-header {
-  border-top: 1em;
-  border-bottom: 1em;
+.blog-post-title {
+  margin-bottom: .25rem;
+  font-size: 2.5rem;
 }
-.post-title {
-  text-transform: uppercase;
-  font-size: 120%;
-  /* line-height: 1.3em; */
-  text-decoration: none;
-  color: rgb(44, 44, 44);
-
-}
-.post-avatar {
-  border-radius: 50px;
-  float: right;
-  margin-left: 1em;
-}
-.post-description {
-  font-family: Georgia, "Cambria", serif;
-  color: #444;
-  /* line-height: 1.8em; */
-
-  /* padding-top: 0.2em; */
-  /* padding: 1rem 0.2em; */
-  font-size: 85%;
-
-}
-.post-meta {
+.blog-post-meta {
+  margin-bottom: 1.25rem;
   color: #999;
-  font-size: 78%;
-  line-height: 3em;
-
-  text-align: left;
-  margin: 0;
 }
+
+/*
+ * Footer
+ */
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+

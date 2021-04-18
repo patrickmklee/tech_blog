@@ -32,6 +32,7 @@ router.get('/', (req, res) => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
 
       res.render('homepage', {
+        title:"Tech Blog",
         posts,
         loggedIn: req.session.loggedIn
       });
@@ -67,19 +68,20 @@ router.get('/post/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username','id']
       }
     ]
   })
     .then(dbPostData => {
+      
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
 
       const post = dbPostData.get({ plain: true });
-
       res.render('single-post', {
+        isOwner: (req.session.user_id===post.user.id),
         post,
         loggedIn: req.session.loggedIn
       });
@@ -95,8 +97,10 @@ router.get('/signup', (req, res) => {
       res.redirect('/');
       return;
     }
-  
-    res.render('signup');
+    res.render("homepage", {
+      title: "Create your account"
+    }
+    );
   });
 
 router.get('/login', (req, res) => {

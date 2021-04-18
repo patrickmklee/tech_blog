@@ -1,38 +1,38 @@
-const { text } = require('express');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // create our Post model
 class Post extends Model {
-  static comment(body, models) {
-    return models.Comment.create({
-      user_id: body.user_id,
-      post_id: body.post_id
-    }).then(() => {
-      return Post.findOne({
-        where: {
-          id: body.post_id
-        },
-        attributes: [
-          'id',
-          'title',
-          'text',
-          'created_at',
-          // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = comment.post_id)'), 'comment_count']
-        ]
-        ,
-        include: [
-          {
-            model: models.Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-            include: {
-              model: models.User,
-              attributes: ['username']
-            }
-          }
-        ]
-      });
-    });
-  }
+  // static comment(body, models) {
+  //   return models.Comment.create({
+  //     comment_text: body.comment_text,
+  //     user_id: body.user_id,
+  //     post_id: body.post_id
+  //   }).then(() => {
+  //     return Post.findOne({
+  //       where: {
+  //         id: body.post_id
+  //       },
+  //       attributes: [
+  //         'id',
+  //         'title',
+  //         'text',
+  //         'created_at'
+  //         // [sequelize.literal('(SELECT COUNT(*) FROM comment WHERE post.id = comment.post_id)'), 'comment_count']
+  //       ]
+  //       ,
+  //       include: [
+  //         {
+  //           model: models.Comment,
+  //           attributes: ['id', 'comment_text', 'user_id', 'created_at'],
+  //           include: {
+  //             model: models.User,
+  //             attributes: ['username']
+  //           }
+  //         }
+  //       ]
+  //     });
+  //   });
+  // }
 }
 
 // create fields/columns for Post model
@@ -62,6 +62,7 @@ Post.init(
         key: 'id'
       }
     },
+
       // validate: {
       //   len[1]
       // }
