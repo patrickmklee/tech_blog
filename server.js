@@ -11,17 +11,21 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
   secret: 'bigolSecret we got here',
+
   cookie: {},
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: new SequelizeStore({
-    db: sequelize
+    db: sequelize,
+    checkExpirationInterval: 1 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
+    expiration: 10 * 60 * 1000  // The maximum age (in milliseconds) of a valid session.
   })
 };
 
 app.use(session(sess));
 
 const helpers = require('./utils/helpers');
+
 
 const hbs = exphbs.create({ helpers });
 

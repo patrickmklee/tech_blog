@@ -59,15 +59,16 @@ router.get('/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['id, username']
+        attributes: ['id,s username']
       }
     ]
   })
   .then(dbPostData => {
-    if (!dbPostData) {
-      res.status(404).json({ message: 'No post found with this id' });
-      return;
-    }
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+
     res.json(dbPostData);
   })
 
@@ -118,6 +119,7 @@ router.put('/:id', withAuth, (req, res) => {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
+      
       res.json(dbPostData);
     })
     .catch(err => {

@@ -2,9 +2,7 @@
 {{> page/header}}
 
 {{#if isEditorPage}}
-
 {{> post-form post}}
-<script src="/javascript/add-post.js"></script>
 {{else}}
 <div class="container mt-2">
   <a class="btn btn-outline-success" href="/dashboard/new">New Post</a>
@@ -28,3 +26,4 @@
   {{!-- {{/if}} --}}
 </div>
 {{/if}}
+<script src="/javascript/add-post.js"></script>

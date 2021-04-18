@@ -4,11 +4,11 @@
 {{#unless isEditorPage}}
 {{#if loggedIn}}
 <a href="/dashboard" class="btn btn-secondary" type="button" role="button">Dashboard</a>
-<a href="/" id="logout" class="btn btn-outline-secondary btn-logout" type="button" role="button">Logout</a>
 {{else}}
 <a href="/login"  class="btn btn-outline-primary" type="button" role="button">Log In</a>
 <a href="/signup" class="btn btn-outline-primary" type="button" role="button">Sign up</a>
 {{/if}}
 {{/unless}}
-<a href="/" id="logout" class="btn btn-outline-secondary" hidden type="button" role="button">Logout</a>
+<button id="logout" class="btn btn-outline-secondary" {{#unless loggedIn}} hidden {{/unless}} type="button" role="button">Logout</button>
+</button> 
 </div>

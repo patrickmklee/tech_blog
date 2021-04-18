@@ -1,5 +1,11 @@
 module.exports = {
     // displayForm: function () { return },
+    form_properties: params => {
+      if (!params.id)  {
+        return `id="form-post-new`
+      }
+      return `data-id=${params.id} id="form-post-edit"`
+    },
     format_date: date => {
       return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(
         date
