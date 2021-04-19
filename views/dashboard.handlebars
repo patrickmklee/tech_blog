@@ -1,25 +1,21 @@
 {{#if isEditorPage}}
 {{> post-form post}}
 {{else}}
+<div class="container-fluid align-center py-2">
+  <h2 class= "display-4">User dashboard</h2>
+  <a class="btn btn-success" type="button" role="button" href="/dashboard/new">New Post</a>
+</div>
 <div class="container mt-2">
-  <a class="btn btn-outline-success" href="/dashboard/new">New Post</a>
-  <p class= "post-display-title">Your Posts</p>
-
-{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-  <a class="navbar-brand" href="/">
-  {{> page/title}}
-  </a>
-  </div>
-</nav> --}}
-{{!-- {{> page/nav}} --}}
-{{!-- <section class="homepage-main"> --}}
-  
+  {{!-- <div class="card"> --}}
+  <div class="card-body">
   {{#each posts as |post|}}
   <div class="row post-container mb-2">
     {{> post-info post }}
   </div>
   {{/each}}
+  </div>
+
+  {{!-- </div> --}}
   {{!-- {{/if}} --}}
 </div>
 {{/if}}
