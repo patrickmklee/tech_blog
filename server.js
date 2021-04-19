@@ -12,16 +12,13 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
   secret: 'bigolSecret we got here',
-  genid: function(req) {
-    return nanoid() // use UUIDs for session IDs
-  },
   cookie: {},
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
     checkExpirationInterval: 1 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
-    expiration: 10 * 60 * 1000  // The maximum age (in milliseconds) of a valid session.
+    expiration: 60 * 60 * 1000  // The maximum age (in milliseconds) of a valid session.
   })
 };
 
