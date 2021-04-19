@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { Store } = require('express-session');
 const { User, Post, Comment  } = require('../../models');
 
 // get all users

@@ -13,8 +13,8 @@ const PORT = process.env.PORT || 3001;
 
 const store =  new SequelizeStore({
   db: sequelize,
-  checkExpirationInterval: 2 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
-  expiration: 20 * 1000  // The maximum age (in milliseconds) of a valid session.
+  checkExpirationInterval: 10 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
+  expiration: 2 * 60 * 1000  // The maximum age (in milliseconds) of a valid session.
 })
 const sess = {
   secret: 'bigolSecret we got here',
