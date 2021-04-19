@@ -1,14 +1,3 @@
-{{> page/navbar}}
-{{> page/header}}
-
-{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-  <a class="navbar-brand" href="/">
-  {{> page/title}}
-  </a>
-  </div>
-</nav> --}}
-
 <div class="container mb-2 post-container">
 <div data-id={{post.id}}>
   {{> post-info post}}
@@ -18,16 +7,19 @@
   {{/if}}
 </div>
 
-<div class="row border-top border-dark">
+<span class="row border border-dark">
 {{> comments post.comments}}
-</div>
+</span>
 {{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-  <div>
-    <button id="btn-add-comment" class="btn btn-default" type="submit">add comment</button>
+
+<form class="comment-form mt-3">
+  <div class="form-control-group">
+    <textarea class="form-control" name="comment-body"></textarea>
+    </div>
+    <br />
+    <div class="form-control-group">
+      
+    <button role="button" id="btn-add-comment" class="form-control-md" type="submit">Add Comment</button>
   </div>
 </form>
 <script src="/javascript/comment.js"></script>

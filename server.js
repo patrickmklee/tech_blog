@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const { nanoid } = require('nanoid')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -11,7 +12,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
   secret: 'bigolSecret we got here',
-
+  genid: function(req) {
+    return nanoid() // use UUIDs for session IDs
+  },
   cookie: {},
   resave: false,
   saveUninitialized: false,

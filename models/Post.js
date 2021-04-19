@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // create our Post model
 class Post extends Model {
-  static checkUser (session) {
-    return (session.user_id === this.user_id);
-  }}
+  // checkUser(session) {
+  //   return (session.user_id === this.user_id);
+  // },
   // static comment(body, models) {
   //   return models.Comment.create({
   //     comment_text: body.comment_text,
@@ -20,7 +20,7 @@ class Post extends Model {
   //         'title',
   //         'text',
   //         'created_at'
-  //         // [sequelize.literal('(SELECT COUNT(*) FROM comment WHERE post.id = comment.post_id)'), 'comment_count']
+  //         [sequelize.literal('(SELECT COUNT(*) FROM comment WHERE post.id = comment.post_id)'), 'comment_count']
   //       ]
   //       ,
   //       include: [
@@ -36,6 +36,7 @@ class Post extends Model {
   //     });
   //   });
   // }
+}
 
 
 // create fields/columns for Post model
@@ -70,6 +71,14 @@ Post.init(
       //   len[1]
       // }
   },
+  // {
+  //     hooks: {
+  //   // set up beforeCreate lifecycle "hook" functionality
+  //   async beforeCreate(newCommentData) {
+  //     newCommentData.id = await g.hash(newUserData.password, 10);
+  //     return newUserData;
+  //   },
+  // }
   {
     sequelize,
     freezeTableName: true,

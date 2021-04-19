@@ -9,8 +9,13 @@
 </head>
 <body>
     {{!-- <div class="container py-4"> --}}
+    <header>
+      {{> page/navbar}}
+      {{> page/header}}
+    </header>
     {{{body}}}
-    {{!-- </div> --}}
+
+
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
