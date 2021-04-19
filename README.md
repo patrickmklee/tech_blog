@@ -17,9 +17,15 @@
   * npm start
 
   ## Usage
+  __Getting Started__
+  * Register an account
+  * Login with username and password
   
-  ### Register an account
-  ## Credits
+  __Posting and Commenting__
+  * Click on title of a block post
+  * If are the creator, you will have the option to edit or delete the post
+  * Comments are displayed below the article
+  * Enter text and click 'Add Comment' 
   
   ## License
   This project is using the [Apache 2.0](https://choosealicense.com/licenses/apache-2.0/)
